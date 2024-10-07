@@ -4,10 +4,11 @@ const Form = ({ fetchTheValue }) => {
     const [keyWord, setKeyWord] = useState("");
     const [checked, setChecked] = useState(false);
     const [numberOfImages, setNumberOfImages] = useState(0);
+    const [orientation, setOrientation] = useState("landscape"); // New state for orientation
 
     const handleSubmit = (e) => {
         e.preventDefault();
-        fetchTheValue(keyWord, checked, numberOfImages);
+        fetchTheValue(keyWord, checked, numberOfImages, orientation);
         setKeyWord("");
     };
 
@@ -38,6 +39,17 @@ const Form = ({ fetchTheValue }) => {
                         onChange={(e) => setChecked(e.target.checked)}
                     />
                     <span className="text-gray-700">Get Random Images</span>
+                </div>
+
+                <div className="mb-4">
+                    <select
+                        value={orientation}
+                        onChange={(e) => setOrientation(e.target.value)}
+                        className="w-full px-4 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:border-transparent transition-all duration-300"
+                    >
+                        <option value="landscape">Landscape</option>
+                        <option value="portrait">Portrait</option>
+                    </select>
                 </div>
 
                 <div className="mb-6">
