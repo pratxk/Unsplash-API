@@ -13,7 +13,7 @@ const Form = ({ fetchTheValue }) => {
     };
 
     return (
-        <div className="bg-white shadow-lg rounded-lg p-8 w-full max-w-md">
+        <div className="bg-white shadow-2xl rounded-lg p-8 w-full max-w-md">
             <h1 className="text-2xl font-semibold text-gray-800 mb-6 text-center">
                 Image Search
             </h1>
